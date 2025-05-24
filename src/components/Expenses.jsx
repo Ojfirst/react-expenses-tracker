@@ -1,8 +1,9 @@
 import ExpenseItem from './ExpenseItem';
+import './Expenses.css';
 
-const Expense = (props) => {
+const Expenses = (props) => {
 	return (
-		<div>
+		<div className='expenses'>
 			<ExpenseItem
 				title={props.items[0].title}
 				amount={props.items[0].amount}
@@ -28,4 +29,4 @@ const Expense = (props) => {
 	);
 };
 
-export default Expense;
+export default Expenses;
