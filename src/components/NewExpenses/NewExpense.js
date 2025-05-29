@@ -5,10 +5,10 @@ import './NewExpense.css';
 const NewExpense = (props) => {
 	const onSaveExpenseHandler = (recievedExpenseData) => {
 		const expenseData = {
-			...recievedExpenseData,
-			id: Math.random().toString(),
+			...recievedExpenseData, // Data racieved from child (ExpensForm)
+			id: Math.random().toString(), // Add id for key identification
 		};
-		props.onAddExpenseData(expenseData);
+		props.onAddExpenseData(expenseData); // Further send input data to (App.js)
 	};
 
 	return (

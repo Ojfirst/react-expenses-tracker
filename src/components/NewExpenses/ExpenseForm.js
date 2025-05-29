@@ -7,7 +7,8 @@ const ExpenseForm = (props) => {
 	const [enteredAmount, setEnteredAmount] = useState('');
 	const [enteredDate, setEnteredDate] = useState('');
 
-	// Alternative to calling different evenHandler
+	// Alternative to calling different eventHandler
+  // Handles all form input eventlistening
 	const inputChangeHandler = (identifier, value) => {
 		if (identifier === 'title') {
 			setEnteredTitle(value);
@@ -20,14 +21,14 @@ const ExpenseForm = (props) => {
 
 	const submiteHandler = (e) => {
 		e.preventDefault();
-
+    // Computed user inputs
 		const expenseData = {
 			title: enteredTitle,
 			amount: enteredAmount,
 			date: new Date(enteredDate),
 		};
 
-		props.onSaveExpenseData(expenseData);
+		props.onSaveExpenseData(expenseData); // Passes Data to Parent (NewExpense)
     //Clear userInput
     setEnteredTitle('');
     setEnteredAmount('');
@@ -42,7 +43,7 @@ const ExpenseForm = (props) => {
 					{/* <input type="text" onChange={TitleChangeHandler} /> */}
 					<input
 						type="text"
-            value={enteredTitle}
+            value={enteredTitle} // Two ways binding data passing
 						onChange={(e) => inputChangeHandler('title', e.target.value)}
 					/>
 				</div>

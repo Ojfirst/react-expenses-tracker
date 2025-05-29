@@ -12,6 +12,8 @@ const ExpensesFilter = (props) => {
 		<div className="expenses-filter">
 			<div className="expenses-filter__control">
 				<label>Filter by year</label>
+        {/* Recieves value data from parent (Expense.js) */}
+        {/* onChange is eventlistening is handled in parent (Expense.js) */}
 				<select value={props.selected} onChange={dropDownChangeHandler}>
 					<option value="2025">2025</option>
 					<option value="2024">2024</option>
