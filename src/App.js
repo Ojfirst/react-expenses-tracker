@@ -25,7 +25,7 @@ const InitialExpense = [
 ];
 function App() {
 	const [expenses, setNewExpenses] = useState(InitialExpense);
-
+  // Recieved expense from NewExpense.js (State lifting)
 	const onAddexpenseDataHandler = (expense) => {
 		setNewExpenses((prev) => {
       return [expense, ...prev];
