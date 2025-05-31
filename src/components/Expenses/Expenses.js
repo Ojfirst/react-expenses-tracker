@@ -3,6 +3,7 @@ import Card from '../UI/Card';
 import './Expenses.css';
 import ExpensesFilter from './ExpensesFilter';
 import ExpensesList from './ExpenseList';
+import ExpensesChart from './ExpensesChart';
 
 const Expenses = (props) => {
 	const [filteredYear, setFilteredYear] = useState('2025'); // Initial useState
@@ -27,6 +28,9 @@ const Expenses = (props) => {
 					selected={filteredYear} // Initial useState
 					onChangeFilter={filterYearHandler} // Set props recieve input value from child (ExpenseesFilter.js)
 				/>
+        {/* Pass filteredExpense to ExpensesChart Component */}
+        <ExpensesChart expenses={filteredExpense} />
+        {/* Conditional rendering to show message if no expenses found */}
         {/* Pass filteredExpenses as props to be used in Expenseslist Component */}
         <ExpensesList items={filteredExpense}/>
 			</Card>
