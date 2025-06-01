@@ -17,8 +17,9 @@ const Expenses = (props) => {
 		return expense.date.getFullYear().toString() === filteredYear;
 	});
 
-
-
+	// Filtered expense by amount.
+	// Pass-on to ExpensesFilter
+	const filteredExpenseAmount = filteredExpense.map((e) => e.amount);
 
 	return (
 		<div>
@@ -27,12 +28,13 @@ const Expenses = (props) => {
 				<ExpensesFilter
 					selected={filteredYear} // Initial useState
 					onChangeFilter={filterYearHandler} // Set props recieve input value from child (ExpenseesFilter.js)
+					data={filteredExpenseAmount}
 				/>
-        {/* Pass filteredExpense to ExpensesChart Component */}
-        <ExpensesChart expenses={filteredExpense} />
-        {/* Conditional rendering to show message if no expenses found */}
-        {/* Pass filteredExpenses as props to be used in Expenseslist Component */}
-        <ExpensesList items={filteredExpense}/>
+				{/* Pass filteredExpense to ExpensesChart Component */}
+				<ExpensesChart expenses={filteredExpense} />
+				{/* Conditional rendering to show message if no expenses found */}
+				{/* Pass filteredExpenses as props to be used in Expenseslist Component */}
+				<ExpensesList items={filteredExpense} />
 			</Card>
 		</div>
 	);

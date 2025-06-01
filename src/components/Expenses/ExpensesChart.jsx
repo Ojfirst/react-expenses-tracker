@@ -21,7 +21,7 @@ const ExpensesChart = (props) => {
 	// Sum all expenses for different months
 	// using for of loop because expnses is an array and not an object
 	for (const expense of props.expenses) {
-    // Get month from expense date
+		// Get month from expense date
 		const expenseMonth = expense.date.getMonth(); // Start from 0 => Jan
 		// Accurately selecte month for chartDatePoint which start from Zero
 		charDataPoints[expenseMonth].value += expense.amount; // Increase value of month by expense amount
