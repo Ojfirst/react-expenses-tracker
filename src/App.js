@@ -25,12 +25,20 @@ const InitialExpense = [
 ];
 function App() {
 	const [expenses, setNewExpenses] = useState(InitialExpense);
-  // Recieved expense from NewExpense.js (State lifting)
+	// Recieved expense from NewExpense.js (State lifting)
 	const onAddexpenseDataHandler = (expense) => {
 		setNewExpenses((prev) => {
-      return [expense, ...prev];
-    });
+			return [expense, ...prev];
+		});
 	};
+
+	// const onDeleteExpenseDataHandler = (expense, id) => {
+	// 	setNewExpenses((prev) => {
+	// 	 	prev.filter((exp) => exp.id !== id);
+  //     return [expense, ...prev]
+	// 	});
+	// };
+	// console.log(onDeleteExpenseDataHandler);
 
 	return (
 		<div>
